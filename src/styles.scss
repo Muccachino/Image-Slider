@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#content {
+  display: grid;
+  justify-content: center;
+
+  #carousel-pics {
+    width: 900px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    #previous {
+      width: 100px;
+      height: 500px;
+      background-color: rgba(255, 255, 255, 0.7);
+      z-index: 999;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s linear;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      em {
+        display: block;
+        height: 5px;
+        width: 50px;
+        background-color: #fff;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      :first-child {
+        transform: rotate(-45deg);
+      }
+      :last-child {
+        transform: rotate(45deg);
+        margin-top: 28px;
+      }
+    }
+    #next {
+      width: 100px;
+      height: 500px;
+      background-color: rgba(255, 255, 255, 0.7);
+      z-index: 999;
+      position: absolute;
+      left: 800px;
+      opacity: 0;
+      transition: opacity 0.5s linear;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      em {
+        display: block;
+        height: 5px;
+        width: 50px;
+        background-color: #fff;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      :first-child {
+        transform: rotate(45deg);
+      }
+      :last-child {
+        transform: rotate(-45deg);
+        margin-top: 28px;
+      }
+    }
+    .pic {
+      width: 900px;
+      height: 500px;
+      position: absolute;
+      transition: left 0.5s ease-in-out;
+    }
+  }
+  #nav_bottom {
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    .nav_dot {
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid black;
+      border-radius: 100px;
+    }
+  }
+}
